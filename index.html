@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe API - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+        }
+        .recipe-list {
+            margin-top: 20px;
+        }
+        .recipe-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .recipe-card h3 {
+            margin-top: 0;
+        }
+        .recipe-card p {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Recipe API</h1>
+    <p>Here is a list of available recipes:</p>
+
+    <div class="recipe-list">
+        {% for recipe in recipes %}
+            <div class="recipe-card">
+                <h3>{{ recipe.label }}</h3>
+                <p><strong>Source:</strong> {{ recipe.source }}</p>
+                <p><strong>URL:</strong> <a href="{{ recipe.url }}" target="_blank">{{ recipe.url }}</a></p>
+            </div>
+        {% else %}
+            <p>No recipes found.</p>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

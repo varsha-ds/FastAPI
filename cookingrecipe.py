@@ -7,7 +7,7 @@ from pathlib import Path
 from schemas import Recipe, RecipeCreate, RecipeSearchResults
 from recipe_data import RECIPES
 BASE_PATH = Path(__file__).resolve().parent
-TEMPLATES = Jinja2Templates(directory=str(BASE_PATH/"templates"))
+TEMPLATES = Jinja2Templates(directory=str(BASE_PATH))
 
 app = FastAPI(
     title="Recipe API", openapi_url="/openapi.json"
